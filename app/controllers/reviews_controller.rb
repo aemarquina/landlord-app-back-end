@@ -15,7 +15,8 @@ class ReviewsController < OpenReadController
 
   # POST /reviews
   def create
-    @review = Review.new(review_params)
+    # @review = Review.new(review_params)
+    @review = current_user.reviews.build(review_params)
 
     if @review.save
       render json: @review, status: :created, location: @review
@@ -26,16 +27,27 @@ class ReviewsController < OpenReadController
 
   # PATCH/PUT /reviews/1
   def update
-    if @review.update(review_params)
-      render json: @review
+
+    if !current_user.nil? && current_user == @review.user
+      if @review.update(review_params)
+        render json: @review
+      else
+        render json: @review.errors, status: :unprocessable_entity
+      end
     else
-      render json: @review.errors, status: :unprocessable_entity
+      render json: @review.errors, status: :not_found
     end
   end
 
   # DELETE /reviews/1
   def destroy
-    @review.destroy
+    # @review.destroy
+    @review=Review.find(params[:id])
+    if current_user == @review.user
+      @review.destroy
+    else
+      render json: @review.errors, status: :not_authorized
+    end
   end
 
   private
@@ -46,6 +58,6 @@ class ReviewsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def review_params
-      params.require(:review).permit(:property, :rating, :landlord, :movein, :moveout, :description, :user_id)
+      params.require(:review).permit(:property, :rating, :landlord, :movein, :moveout, :description)
     end
 end

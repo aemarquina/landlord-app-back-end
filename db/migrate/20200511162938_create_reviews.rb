@@ -4,8 +4,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :property
       t.integer :rating
       t.string :landlord
-      t.bigint :movein
-      t.bigint :moveout
+      t.date :movein
+      t.date :moveout
       t.string :description
       t.references :user, foreign_key: true
 
