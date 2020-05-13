@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_05_11_162938) do
     t.string "property"
     t.integer "rating"
     t.string "landlord"
-    t.bigint "movein"
-    t.bigint "moveout"
+    t.date "movein"
+    t.date "moveout"
     t.string "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
