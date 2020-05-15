@@ -5,18 +5,18 @@ This application is meant to give renters a little power back. You can view revi
 ## Setup Steps
 
 1. Downloaded the a react-template
-1. Run `npm install` to install all dependencies
-1. Use `npm start` to spin up the server.
+1. Run `bundle install` to install all dependencies
+1. Use `bin/rails server` to spin up the server.
 
 ## Important Links
 
-- [Backend Repo](https://github.com/aemarquina/landlord-app-api)
+- [Frontend Repo](https://github.com/aemarquina/landlord-app-client)
 - [Deployed API](https://infinite-hamlet-62929.herokuapp.com/)
 - [Deployed Client](https://aemarquina.github.io/landlord-app-front-end/.)
 
 ## Planning Story
 
-I first started mapping out my wire frames and erds. Once I had a clear grasp on that, I started writing psuedo code 
+I first started mapping out my wire frames and erds. Once I had a clear grasp on that, I started writing psuedo code. Once I felt comfortable with my plan I started on the back end. Thankfully since I had already had familiarity with Ruby on Rails, I felt a bit more was able to complete this quickly. Once I successfully implemented my backend and was able to complete all crud actions, I moved to the front end. This was the first time that I had used React and it was quite the experience. However, I did find that because I was meticulous with my planning and broke down the steps, I felt a lot more prepared to tackle the errors that I encountered(which were many). 
 
 ### User Stories
 
@@ -44,21 +44,20 @@ DELETE | /reviews/:id
 
 ### Unsolved Problems
 
-- Make styling updates
-- Add the functionality to add pictures of the property
-- Add search functionality for landlords, addresses, and regions
+- Create 2 different resources for landlord and property
+
 
 ## Images
 
 #### App Screenshot:
-![screenshot](https://media.idownloadblog.com/wp-content/uploads/2017/07/Select-Instagram-story-to-save-to-iPhone.jpeg)
+![screenshot](https://i.imgur.com/XPuA4ey.png)
 
 ---
 
 #### Wireframe:
-![wireframe](https://drive.google.com/file/d/1MomQvfIpfLK7XB9oor8YCQQJX1QBMCoh/view?usp=sharing)
+![wireframe](https://i.imgur.com/VSp3ilx.jpg)
 
 ---
 
 #### ERD:
-![ERD](https://drive.google.com/file/d/1kJ8qDf69_aHZvuBxDKm_t7V9mjgwe_wx/view?usp=sharing)
+![ERD](https://i.imgur.com/10OeFlY.jpg)
